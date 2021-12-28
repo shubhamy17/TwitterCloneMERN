@@ -1,0 +1,98 @@
+.frontpage {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  color: rgb(217, 217, 217);
+}
+.twiterlogo {
+  width: 53vw;
+  height: 100vh;
+}
+.logo {
+  width: 8%;
+  height: 8%;
+}
+.Rightside {
+  background-color: black;
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+.now {
+  margin-top: 3rem;
+  font-size: 4rem;
+}
+.join {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+.googleSignBtn {
+  background-color: white;
+  color: gray;
+}
+.applySignBtn {
+  background-color: white;
+  color: bold;
+  margin-top: 7px;
+}
+.btnimg {
+  width: 14%;
+  height: 47%;
+}
+.singupBtn {
+  background-color: #4d88ff;
+  color: white;
+}
+.singInbtn {
+  border: 1px solid #4d88ff;
+  color: #4d88ff bold;
+}
+.terms {
+  font-size: x-small;
+}
+
+.rightsidebtn {
+  display: flex;
+  flex-direction: column;
+}
+button {
+  width: 18rem;
+  height: 2.5rem;
+  border-radius: 50px;
+}
+.formHeading {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.formCard {
+  width: 600px;
+  height: 500px;
+  margin: auto;
+  background-color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  margin-top: 50px;
+}
+.tagName {
+  margin: 0.3rem;
+}
+input {
+  border-radius: 0.3rem;
+  border: 2px solid grey;
+  width: 30rem;
+  padding: 1rem 0.6rem;
+  margin: 0.4rem 2rem;
+  font-size: 1rem;
+}
+.submit {
+  font-size: 1rem;
+  width: 30rem;
+  margin: 1rem 2rem;
+  padding: 0.6rem 0.6rem;
+  background-color: rgba(128, 128, 128, 0.74);
+  border-radius: 2rem;
+  border: 1px solid grey;
+}
