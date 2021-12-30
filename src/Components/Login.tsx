@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../Style/signIn.css";
 import cross from "../assets/cross.jpg";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import { useNavigate } from "react-router-dom";
 
 interface IProps {
@@ -17,17 +17,22 @@ function Login(props: IProps) {
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    axios.post("http://localhost:3001/auth/login", form).then((res: any) => {
-      res = res.data;
-      //   console.log(res);
-      if (res.status == "200") {
-        seterrstatus(res.message);
-        navigate("/auth/feed");
-      } else {
-        seterrstatus(res.error);
-      }
-      setform({ loginId: "", password: "" });
-    });
+    axios
+      .post("http://localhost:3001/auth/login", form)
+      .then((res: AxiosResponse) => {
+        const value = res.data;
+        console.log(value);
+
+        if (value.status === 200) {
+          seterrstatus(value.message);
+
+          localStorage.setItem("userId", value.data._id);
+          navigate("/auth/feed");
+        } else {
+          seterrstatus(value.error);
+        }
+        setform({ loginId: "", password: "" });
+      });
   }
   const handlerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setform({
@@ -80,7 +85,7 @@ function Login(props: IProps) {
         <div className="status" style={{ height: "2rem" }}>
           {errstatus}
         </div>
-        {errstatus == "Login Successful" ? (
+        {errstatus === "Login Successful" ? (
           <Link to="/auth/feed">
             <button style={{ width: "4rem", padding: "0rem" }}>Home</button>
           </Link>

@@ -1,8 +1,15 @@
-import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
+import React, { useState } from "react";
 import "../Style/signIn.css";
 import cross from "../assets/cross.jpg";
 import axios, { AxiosResponse } from "axios";
-import { constants } from "perf_hooks";
+
+const defaultState = {
+  username: "",
+  name: "",
+  password: "",
+  phonenumber: "",
+  email: "",
+};
 
 interface IPost {
   message: string;
@@ -17,15 +24,7 @@ interface IProps {
 
 // const defaultPosts:IPost[] = [];
 function SingIn(props: IProps) {
-  const [form, setform] = useState({
-    username: "",
-    name: "",
-    password: "",
-    phonenumber: "",
-    email: "",
-  });
-  // console.log(form);
-
+  const [form, setform] = useState(defaultState);
   const [errstatus, seterrstatus] = useState("");
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -42,13 +41,7 @@ function SingIn(props: IProps) {
         } else {
           seterrstatus(value.error);
         }
-        setform({
-          username: "",
-          name: "",
-          password: "",
-          phonenumber: "",
-          email: "",
-        });
+        setform(defaultState);
         //  console.log(form)
       });
   }

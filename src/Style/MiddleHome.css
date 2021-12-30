@@ -1,0 +1,32 @@
+.middleMain {
+  width: 100%;
+  border: 1px solid #eff3f4;
+  height: 100%;
+  margin-left: 15rem;
+}
+.homeH1 {
+  margin: 0.8rem 0rem;
+  height: 53px;
+  padding: 0rem 1rem;
+  font-size: 1.4rem;
+  font-weight: 650;
+  border-bottom: 1px solid #eff3f4;
+  color: rgba(0, 0, 0, 0.849);
+  position: sticky;
+  top: 2;
+  z-index: 100;
+  background-color: white;
+}
+.icons {
+  color: rgb(29, 155, 240);
+  margin-left: 5px;
+}
+.tweetbtn {
+  margin-left: 19rem;
+  background-color: rgb(29, 155, 240);
+  color: white;
+  width: 6rem;
+  border-radius: 35px;
+  height: 2rem;
+  border: none;
+}
